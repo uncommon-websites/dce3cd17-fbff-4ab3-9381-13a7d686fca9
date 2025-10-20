@@ -1,7 +1,7 @@
 export const CONFIG = {
-	companyName: "Company",
-	description: "Description",
+	companyName: "Cycles",
+	description: "Balanced hormones and symptom relief by synchronizing bioidentical prescriptions, supplements, and lifestyle programs with your natural cycle.",
 	image: "/og.png",
-	url: "https://example.com",
+	url: "https://cycles.health",
 	fontFamily: "Inter Variable"
 };

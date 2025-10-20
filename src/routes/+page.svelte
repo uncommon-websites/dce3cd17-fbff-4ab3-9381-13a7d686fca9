@@ -7,6 +7,14 @@
 	import AboutTeaser from "$lib/components/layout/AboutTeaser.svelte";
 	import LogoScroller from "$lib/components/layout/LogoScroller.svelte";
 	import Hero from "$lib/components/layout/hero-sections/Hero.svelte";
+
+	// Icons
+	import IconFlask from "~icons/lucide/flask-conical";
+	import IconCalendarClock from "~icons/lucide/calendar-clock";
+	import IconTestTube from "~icons/lucide/test-tube";
+	import IconSparkles from "~icons/lucide/sparkles";
+	import IconShieldCheck from "~icons/lucide/shield-check";
+	import IconHeartHandshake from "~icons/lucide/heart-handshake";
 </script>
 
 <Hero
@@ -36,62 +44,99 @@
 />
 
 <Summary
-	generating
-	title="What we do"
-	text="Our technology delivers measurable results through secure, adaptable solutions that directly increase productivity and drive growth."
+	title="Hormone care, simplified"
+	text="Cycles brings together bioidentical prescriptions, targeted supplements, and lifestyle guidance in one integrated platform. We serve women experiencing hormonal symptoms who deserve precision care without juggling multiple providers.
+
+Instead of navigating fragmented appointments and conflicting advice, you receive personalized treatment synchronized with your natural cycle—backed by at-home lab testing and continuous optimization."
 />
 
 <Testimonials
-	generating
 	testimonials={[
 		{
-			name: "Jane Smith",
-			position: "CTO",
-			company: "Tech Innovations",
+			name: "Elena Rodriguez",
+			position: "Marketing Director",
+			company: "San Francisco",
 			quote:
-				"Their cutting-edge automation boosted our productivity by 35%.\nThe intuitive interface reduced training time and improved team adoption.",
-			image: "https://www.unc.mn/image-placeholder.svg"
+				"I spent eighteen months bouncing between three different doctors trying to manage my perimenopause symptoms. With Cycles, I had a personalized treatment plan within two weeks and felt noticeably better by week four. The time I've saved not coordinating between multiple providers has been life-changing.",
+			image: "/generated/image-a-professional-woman-in-her-30s-smiling-.webp"
 		},
 		{
-			name: "John Doe",
-			position: "Director of Operations",
-			company: "Global Solutions",
+			name: "Maya Patel",
+			position: "Senior Consultant",
+			company: "Chicago",
 			quote:
-				"Their robust security protocols gave us confidence in handling sensitive data.\nThe 24/7 support team resolved issues within hours, not days.",
-			image: "https://www.unc.mn/image-placeholder.svg"
+				"After a bad experience with synthetic hormones, I was terrified to try anything else. Cycles gave me confidence through comprehensive lab testing and bioidentical prescriptions tailored to my exact hormone levels. No more guessing or trial-and-error with my health at stake.",
+			image: "/generated/image-a-confident-professional-woman-in-her-40.webp"
 		},
 		{
-			name: "Sarah Johnson",
-			position: "Product Manager",
-			company: "Future Systems",
+			name: "Nora Chen",
+			position: "Finance Manager",
+			company: "Austin",
 			quote:
-				"The scalable platform grew seamlessly with our business needs.\nTheir customization options allowed us to tailor solutions perfectly to our workflows.",
-			image: "https://www.unc.mn/image-placeholder.svg"
+				"I was paying separately for my doctor visits, lab work, supplements, and prescription refills from four different places. Cycles integrated everything into one monthly membership that costs less than what I was spending before, and the care is far more coordinated and effective.",
+			image: "/generated/image-a-professional-woman-in-her-mid-30s-radi.webp"
 		}
 	]}
 />
 
 <Features
-	generating
-	title="Features"
-	subtitle="Some features"
+	title="Hormone care designed for you"
+	subtitle="Everything you need to optimize your hormones and reclaim your energy in one integrated platform"
 	features={[
 		{
-			title: "Streamlined Workflows",
+			title: "Bioidentical prescriptions",
 			description:
-				"Automate repetitive tasks and connect systems to improve productivity with our industry-leading 87% time savings."
+				"Get hormone therapy that works with your body, not against it. Our bioidentical prescriptions mirror your natural hormones to deliver relief without the risks of synthetic alternatives.",
+			icon: IconFlask
 		},
 		{
-			title: "Data Analysis",
+			title: "Cycle-synced care",
 			description:
-				"Extract meaningful insights from your data with powerful analytical tools backed by proprietary AI algorithms that are 3x more accurate than competitors."
+				"Your hormones change throughout your cycle—your care should too. We synchronize your prescriptions, supplements, and lifestyle programs to match your body's natural rhythm.",
+			icon: IconCalendarClock
 		},
 		{
-			title: "Secure Collaboration",
+			title: "At-home lab testing",
 			description:
-				"Work together seamlessly while maintaining strict data privacy standards with our zero-knowledge architecture and military-grade encryption."
+				"Skip the clinic and get precise hormone insights from home. Our comprehensive testing reveals exactly what your body needs for personalized, data-driven care.",
+			icon: IconTestTube
+		},
+		{
+			title: "Integrated ecosystem",
+			description:
+				"No more juggling multiple providers and conflicting advice. Cycles combines prescriptions, supplements, and lifestyle programs in one seamless platform.",
+			icon: IconSparkles
+		},
+		{
+			title: "FDA-compliant care",
+			description:
+				"Get the quality and safety you deserve without the hassle. Our prescriptions meet rigorous FDA standards while remaining accessible and stigma-free.",
+			icon: IconShieldCheck
+		},
+		{
+			title: "Expert guidance",
+			description:
+				"Never navigate hormone care alone again. Our specialized care team provides personalized support every step of your journey to hormonal balance.",
+			icon: IconHeartHandshake
 		}
 	]}
 />
-<AboutTeaser generating />
-<CallToAction generating />
+<AboutTeaser />
+<CallToAction
+	title="Start feeling like yourself again"
+	subtitle="Your first month of care begins in minutes"
+	description="Take the at-home hormone test, receive your personalized bioidentical prescription, and join thousands of women who've reclaimed their energy. No more fragmented care or synthetic hormones you don't trust."
+	imageSrc="/generated/image-a-woman-in-casual-comfortable-clothing-e.webp"
+	callsToAction={[
+		{
+			href: "/start",
+			label: "Begin your assessment",
+			variant: "primary"
+		},
+		{
+			href: "/how-it-works",
+			label: "See how it works",
+			variant: "secondary"
+		}
+	]}
+/>
