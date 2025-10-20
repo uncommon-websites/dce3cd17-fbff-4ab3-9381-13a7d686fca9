@@ -289,4 +289,96 @@
 			filter: brightness(70%) saturate(0%) blur(30px);
 		}
 	}
+
+	/* Modern Tech Aesthetic Utilities */
+	.glass {
+		@apply backdrop-blur-xl bg-white/70 border border-white/20;
+	}
+
+	.glass-dark {
+		@apply backdrop-blur-xl bg-gray-900/70 border border-white/10;
+	}
+
+	.gradient-primary {
+		background: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-700));
+	}
+
+	.gradient-secondary {
+		background: linear-gradient(135deg, var(--color-secondary-400), var(--color-secondary-600));
+	}
+
+	.gradient-accent {
+		background: linear-gradient(135deg, var(--color-primary-400), var(--color-secondary-400));
+	}
+
+	.text-gradient {
+		background: linear-gradient(135deg, var(--color-primary-600), var(--color-secondary-500));
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.glow-primary {
+		position: relative;
+	}
+
+	.glow-primary::before {
+		content: '';
+		position: absolute;
+		inset: -2px;
+		border-radius: inherit;
+		padding: 2px;
+		background: linear-gradient(135deg, var(--color-primary-500), var(--color-secondary-500));
+		-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+		-webkit-mask-composite: xor;
+		mask-composite: exclude;
+		opacity: 0.5;
+		transition: opacity 0.3s ease;
+	}
+
+	.glow-primary:hover::before {
+		opacity: 1;
+	}
+
+	.card-modern {
+		@apply rounded-lg border border-gray-100 bg-white/50 backdrop-blur-sm transition-all duration-300;
+	}
+
+	.card-modern:hover {
+		@apply border-primary-200 bg-white/80;
+		transform: translateY(-2px);
+	}
+
+	.tech-grid {
+		background-image: 
+			linear-gradient(to right, var(--color-gray-100) 1px, transparent 1px),
+			linear-gradient(to bottom, var(--color-gray-100) 1px, transparent 1px);
+		background-size: 40px 40px;
+	}
+
+	@keyframes float {
+		0%, 100% {
+			transform: translateY(0px);
+		}
+		50% {
+			transform: translateY(-10px);
+		}
+	}
+
+	.animate-float {
+		animation: float 3s ease-in-out infinite;
+	}
+
+	@keyframes glow-pulse {
+		0%, 100% {
+			opacity: 0.5;
+		}
+		50% {
+			opacity: 1;
+		}
+	}
+
+	.animate-glow {
+		animation: glow-pulse 2s ease-in-out infinite;
+	}
 }

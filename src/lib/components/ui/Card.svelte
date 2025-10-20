@@ -23,48 +23,48 @@
 </script>
 
 <article
-	class="bg-card hover:bg-sidebar-primary-foreground hover:text-primary-900 border-border flex flex-col rounded-(--radius) border p-4 px-5 text-pretty transition duration-300 ease-out lg:p-5 lg:px-6 {customClass}"
+	class="card-modern group relative flex flex-col overflow-hidden p-6 text-pretty lg:p-8 {customClass}"
 >
+	<!-- Gradient overlay on hover -->
+	<div class="absolute inset-0 -z-10 bg-gradient-to-br from-primary-50/50 to-secondary-50/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+	
 	{#if icon || imageSrc}
-		<div class="mb-8">
+		<div class="mb-6">
 			{#if icon && imageSrc}
 				{@const Icon = icon}
 				<div class="relative">
 					<img
 						src={imageSrc}
 						alt={title}
-						class="w-full object-cover {imageAspect === '9/16' ? 'aspect-[9/16]' : 'aspect-[16/9]'}"
-						style="border-radius: max(2px, calc(var(--radius) - 1rem));"
+						class="w-full rounded-lg object-cover {imageAspect === '9/16' ? 'aspect-[9/16]' : 'aspect-[16/9]'}"
 					/>
 					<div
-						class="absolute top-3 left-3 bg-white/90 p-1.5 backdrop-blur-sm"
-						style="border-radius: max(2px, calc(var(--radius) - 1.25rem));"
+						class="glass absolute top-3 left-3 rounded-md p-2"
 					>
 						<Icon
-							class="size-4 {iconClass.includes('text-')
-								? iconClass.split(' ').find((c) => c.startsWith('text-'))
-								: 'text-primary'}"
+							class="size-5 text-primary"
 						/>
 					</div>
 				</div>
 			{:else if icon}
 				{@const Icon = icon}
-				<Icon class={iconClass} />
+				<div class="inline-flex rounded-lg bg-gradient-to-br from-primary-100 to-secondary-100 p-3">
+					<Icon class="size-6 text-primary-700" />
+				</div>
 			{:else if imageSrc}
 				<img
 					src={imageSrc}
 					alt={title}
-					class="w-full object-cover {imageAspect === '9/16' ? 'aspect-[9/16]' : 'aspect-[16/9]'}"
-					style="border-radius: max(2px, calc(var(--radius) - 1rem));"
+					class="w-full rounded-lg object-cover {imageAspect === '9/16' ? 'aspect-[9/16]' : 'aspect-[16/9]'}"
 				/>
 			{/if}
 		</div>
 	{/if}
 
 	<div class:mt-auto={icon || imageSrc}>
-		<h3 class="text-title3 mb-2">
+		<h3 class="text-title3 mb-3 font-semibold tracking-tight">
 			{title}
 		</h3>
-		<p class="text-body max-w-prose opacity-60">{description}</p>
+		<p class="text-body text-muted-foreground max-w-prose leading-relaxed">{description}</p>
 	</div>
 </article>

@@ -66,34 +66,43 @@
 	} = $props();
 </script>
 
-<div class="" {...rest}>
-	<section class="section-px section-py container mx-auto">
+<div class="relative overflow-hidden" {...rest}>
+	<!-- Background gradient -->
+	<div class="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-secondary-50"></div>
+	<div class="absolute top-1/4 right-1/3 h-96 w-96 rounded-full bg-primary-200/20 blur-3xl"></div>
+	
+	<section class="section-px section-py container relative z-10 mx-auto">
 		<div
-			class="bg-card border-border grid content-start items-center justify-between gap-(--gap) rounded-(--radius) border p-(--gap) text-balance [--gap:--spacing(8)] [--inner-radius:calc(var(--radius)-var(--gap))] [--radius:var(--radius-xl)] lg:grid-cols-[2fr_1fr]"
+			class="glass relative grid content-start items-center justify-between gap-(--gap) overflow-hidden rounded-2xl p-(--gap) text-balance [--gap:--spacing(8)] [--inner-radius:calc(var(--radius)-var(--gap))] [--radius:var(--radius-xl)] lg:grid-cols-[2fr_1fr]"
 		>
+			<!-- Subtle gradient overlay -->
+			<div class="absolute inset-0 -z-10 bg-gradient-to-br from-white/80 to-primary-50/30"></div>
+			
 			<div class="items-between grid h-full content-between gap-16">
-				<h2 class="text-title1 mb-3 flex flex-col">
-					<span><AnimateText text={title} /></span>
-					<span class="text-emphasis-low"><AnimateText text={subtitle} /></span>
+				<h2 class="text-title1 mb-3 flex flex-col font-bold tracking-tight">
+					<span class="text-gradient"><AnimateText text={title} /></span>
+					<span class="text-emphasis-medium"><AnimateText text={subtitle} /></span>
 				</h2>
 				<div class="flex flex-col items-start justify-start gap-7">
-					<p class="text-headline text-emphasis-low">
+					<p class="text-headline text-muted-foreground leading-relaxed">
 						{description}
 					</p>
-					<div class="flex w-full flex-col gap-2 md:flex-row md:flex-wrap">
+					<div class="flex w-full flex-col gap-3 md:flex-row md:flex-wrap">
 						{#each callsToAction as cta}
-							<Button class="w-full md:w-auto" href={cta.href} variant={cta.variant || "primary"}
+							<Button class="glow-primary w-full md:w-auto" href={cta.href} variant={cta.variant || "primary"}
 								>{cta.label}</Button
 							>
 						{/each}
 					</div>
 				</div>
 			</div>
-			<img
-				src={imageSrc}
-				alt="Visual comparison showing product benefits"
-				class="hidden aspect-[4/5] size-full max-h-full w-full rounded-[calc(max(var(--inner-radius),.25rem))] object-cover lg:block"
-			/>
+			<div class="glass hidden overflow-hidden rounded-xl lg:block">
+				<img
+					src={imageSrc}
+					alt="Visual comparison showing product benefits"
+					class="aspect-[4/5] size-full max-h-full w-full object-cover"
+				/>
+			</div>
 		</div>
 	</section>
 </div>

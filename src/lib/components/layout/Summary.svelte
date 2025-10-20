@@ -72,10 +72,10 @@
 	{...rest}
 >
 	{#if title}
-		<p class="text-emphasis-dim word">{title}</p>
+		<p class="text-muted-foreground word font-medium tracking-wide">{title}</p>
 	{/if}
 
-	<div class="text-title1 container-sm gap relative mx-auto grid">
+	<div class="text-title1 container-sm gap relative mx-auto grid font-semibold tracking-tight">
 		{#each segments as paragraph, i}
 			<p class="mb-[1.5em] last:mb-0">
 				{#each paragraph.split(" ").filter(Boolean) as word}

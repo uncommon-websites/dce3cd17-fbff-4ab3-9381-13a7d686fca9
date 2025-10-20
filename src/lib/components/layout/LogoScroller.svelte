@@ -35,7 +35,7 @@
 >
 	{#if label}
 		<p
-			class="body-sm text-emphasis-low whitespace-nowrap"
+			class="body-sm text-muted-foreground whitespace-nowrap font-medium tracking-wide"
 			class:mr-2={layout === "horizontal"}
 			class:sm:mr-4={layout === "horizontal"}
 		>

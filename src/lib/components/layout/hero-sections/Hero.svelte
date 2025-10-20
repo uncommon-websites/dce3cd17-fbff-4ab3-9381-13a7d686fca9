@@ -64,19 +64,26 @@
 	}: Props = $props();
 </script>
 
-<div class="bg-background" {...rest}>
+<div class="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50" {...rest}>
+	<!-- Tech Grid Background -->
+	<div class="tech-grid absolute inset-0 opacity-30"></div>
+	
+	<!-- Gradient Orbs -->
+	<div class="absolute top-0 right-1/4 h-96 w-96 rounded-full bg-primary-200/30 blur-3xl"></div>
+	<div class="absolute bottom-0 left-1/4 h-96 w-96 rounded-full bg-secondary-200/30 blur-3xl"></div>
+
 	<header
 		class={[
-			"section-px container mx-auto grid items-end gap-16 gap-y-9 py-12 pt-24 text-balance",
+			"section-px container relative z-10 mx-auto grid items-end gap-16 gap-y-9 py-12 pt-24 text-balance",
 			centered ? "place-items-center text-center" : " xl:grid-cols-[1fr_auto]"
 		]}
 		data-enter-container
 	>
 		<div class="grid gap-6" class:max-w-prose={centered}>
-			<h1 class="text-display w-full" data-enter>
-				<span class="block"><AnimateText text={title} /></span>
+			<h1 class="text-display w-full font-bold tracking-tight" data-enter>
+				<span class="block text-gradient"><AnimateText text={title} /></span>
 				{#if !centered}
-					<span class="text-emphasis-dim block"><AnimateText text={subtitle} /></span>
+					<span class="text-emphasis-medium block"><AnimateText text={subtitle} /></span>
 				{/if}
 			</h1>
 
@@ -85,7 +92,6 @@
 					data-enter
 					class={[
 						"text-muted-foreground text-headline mx-auto block max-w-[45ch] transition duration-500 ease-out"
-						// isTitleComplete ? "opacity-100" : "translate-y-2 opacity-0 blur-sm"
 					]}
 				>
 					{subtitle}
@@ -100,13 +106,13 @@
 						href={cta.href}
 						size="lg"
 						variant={index % 2 === 0 ? "primary" : "secondary"}
-						class="max-lg:hidden">{cta.label}</Button
+						class="max-lg:hidden glow-primary">{cta.label}</Button
 					>
 					<Button
 						href={cta.href}
 						size="md"
 						variant={index % 2 === 0 ? "primary" : "secondary"}
-						class="lg:hidden">{cta.label}</Button
+						class="lg:hidden glow-primary">{cta.label}</Button
 					>
 				{/each}
 			</div>
@@ -114,13 +120,15 @@
 	</header>
 
 	{#if imageSrc}
-		<div class="col-span-full aspect-video" data-enter>
-			<img
-				src={imageSrc}
-				alt="Customer"
-				class="size-full object-cover"
-				onerror={handleImageError}
-			/>
+		<div class="section-px container relative z-10 mx-auto pb-12" data-enter>
+			<div class="glass relative overflow-hidden rounded-2xl p-2">
+				<img
+					src={imageSrc}
+					alt="Customer"
+					class="size-full rounded-xl object-cover"
+					onerror={handleImageError}
+				/>
+			</div>
 		</div>
 	{/if}
 </div>

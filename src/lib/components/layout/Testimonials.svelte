@@ -145,15 +145,15 @@
 					class={[
 						"lg:container-xs  lg:min-w-[50%] lg:grid-cols-[2fr_3fr]",
 						"items-between grid grid-cols-1 gap-8",
-						"bg-card dark:text-white",
+						"glass dark:text-white",
 						"aspect-video max-w-full min-w-full xl:aspect-[auto]",
 						"transform-gpu transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform",
-						"rounded-(--outer-radius) p-(--gap)",
-						"border-border border contain-layout"
+						"rounded-2xl p-(--gap)",
+						"contain-layout"
 					]}
 					style:transform="translateX(calc(-{scrollProgress} * {maxScrollDistance}px))"
 				>
-					<div class="hidden overflow-clip rounded-[max(var(--inner-radius),2px)] lg:block">
+					<div class="glass hidden overflow-clip rounded-xl lg:block">
 						{#if testimonial.image}
 							<img
 								src={testimonial.image}
@@ -164,19 +164,21 @@
 						{/if}
 					</div>
 					<div class="flex flex-col justify-between gap-12">
-						<q class="text-title2 max-w-prose">{testimonial.quote}</q>
+						<q class="text-title2 max-w-prose font-medium leading-snug tracking-tight">{testimonial.quote}</q>
 						<cite class="text-caption flex items-center gap-3 not-italic">
 							{#if testimonial.image}
-								<img
-									src={testimonial.image}
-									alt="{testimonial.name} testimonial"
-									loading="lazy"
-									class="size-12 rounded-full object-cover lg:hidden"
-								/>
+								<div class="glass overflow-hidden rounded-full lg:hidden">
+									<img
+										src={testimonial.image}
+										alt="{testimonial.name} testimonial"
+										loading="lazy"
+										class="size-12 object-cover"
+									/>
+								</div>
 							{/if}
 							<div>
-								<p class="text-callout">{testimonial.name}</p>
-								<p class="text-muted-foreground">
+								<p class="text-callout font-semibold">{testimonial.name}</p>
+								<p class="text-muted-foreground text-sm">
 									{testimonial.position}, {testimonial.company}
 								</p>
 							</div>
