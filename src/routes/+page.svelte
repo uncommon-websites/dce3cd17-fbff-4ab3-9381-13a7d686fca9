@@ -10,12 +10,30 @@
 </script>
 
 <Hero
-	title="Elevate your business with thoughtful design"
-	subtitle="Solutions that enhance user experience, and improve visual communication."
-	imageSrc="https://www.unc.mn/image-placeholder.svg"
-	generating
+	title="Balanced hormones, reclaimed energy"
+	subtitle="Bioidentical prescriptions and cycle-synced care designed to relieve your symptoms and restore your wellbeing."
+	imageSrc="/generated/image-a-professional-woman-standing-outdoors-e.webp"
+	centered={false}
+	callsToAction={[
+		{
+			href: "/start",
+			label: "Start your journey"
+		},
+		{
+			href: "/how-it-works",
+			label: "How it works"
+		}
+	]}
 />
-<LogoScroller label="" generating />
+<LogoScroller
+	label="Trusted by women's health leaders"
+	logoUrls={[
+		'https://cdn.brandfetch.io/oura.com/w/400/h/400/logo',
+		'https://cdn.brandfetch.io/notion.so/w/400/h/400/logo',
+		'https://cdn.brandfetch.io/calm.com/w/400/h/400/logo',
+		'https://cdn.brandfetch.io/ritual.com/w/400/h/400/logo'
+	]}
+/>
 
 <Summary
 	generating
